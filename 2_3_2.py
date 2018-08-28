@@ -11,10 +11,10 @@ def Merge(A,p,q,r):
 
     while(k <= r):
         if i == len(L):
-            A.extend(R[j:])
+            A[k:r+1] = R[j:]
             break
         elif j == len(R):
-            A.extend(L[i:])
+            A[k:r+1] = L[i:]
             break
         else:
             if L[i] < R[j]:
@@ -34,7 +34,7 @@ def Merge_Sort(A,p,r):
         Merge(A,p,q,r)
 
 
-A = [3,41,20]
+A = [3,41,20,36,45,89,74,85,74,32]
 
 
 
