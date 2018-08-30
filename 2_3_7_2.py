@@ -42,8 +42,11 @@ def P(A,x):
     while i < r:
         k = x - A[i]
         j = i+1
-        find_x(A,j,r,k)
+        if find_x(A,j,r,k)==1:
+            print('Yes')
+            return 'Yes'
         i = i+1
+    print('No')
     return 'No'
 
 def find_x(A,k,m,r):
@@ -51,14 +54,15 @@ def find_x(A,k,m,r):
     if k <= m:
         y = int((k+m)/2)
         if A[y] == r:
-            print('Yes',r)
-            return
+            print(r)
+            return 1
         elif A[y] < r:
-            find_x(A,y+1,m,r)
+            return(find_x(A,y+1,m,r))
         else:
-            find_x(A,k,y-1,r)
-            
+            return(find_x(A,k,y-1,r))
+    else:
+          return 0
 
-x = 101
+x = 102
 
 P(A,x)
